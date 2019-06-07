@@ -3,6 +3,7 @@
 # IDEs
 .vscode/
 .idea/
+*.iml
 
 # Local .terraform directories
 .terraform/
