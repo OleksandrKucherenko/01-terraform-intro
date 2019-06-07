@@ -186,3 +186,39 @@ https://github.com/hashicorp/best-practices/blob/master/terraform/providers/aws/
 ### Code Styling
 
 https://github.com/antonbabenko/pre-commit-terraform
+
+### Oh-My-Zsh Theme/Prompt extension
+
+A small extension that helps to detect current "workspace" used by terraform.
+
+![Imgur](https://i.imgur.com/oLNvhI3.png)
+
+Add those changes to your current ZSH theme (`~/.oh-my-zsh/themes/agnoster.zsh-theme` in my case) :
+
+```bash
+ 239 + │ prompt_terraform() {
+ 240 + │     # dont show 'default' workspace in home dir
+ 241 + │     [[ "$PWD" == ~ ]] && return
+ 242 + │
+ 243 + │     # check if in terraform dir
+ 244 + │     if [[ -d .terraform ]]; then
+ 245 + │       workspace=$(terraform workspace show 2> /dev/null) || return
+ 246 + │       prompt_segment green black "🔩 ${workspace}"
+ 247 + │     fi
+ 248 + │ }
+ 249 + │
+ 250   │ ## Main prompt
+ 251   │ build_prompt() {
+ 252   │   RETVAL=$?
+ 253   │   prompt_status
+ 254   │   prompt_virtualenv
+ 255   │   prompt_aws
+ 256   │   prompt_context
+ 257 + │   prompt_terraform
+ 258   │   prompt_dir
+ 259   │   prompt_git
+ 260   │   prompt_bzr
+ 261   │   prompt_hg
+ 262   │   prompt_end
+ 263   │ }
+```
