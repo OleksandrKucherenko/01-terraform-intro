@@ -1,0 +1,27 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IDEs
+.vscode/
+.idea/
+
+# Local .terraform directories
+.terraform/
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Logs
+*.log
+*.bak
+*.old
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
+
+# Folder with extracted secrets. Keep folder, but no other files from it
+!keys/.keep
+keys/
