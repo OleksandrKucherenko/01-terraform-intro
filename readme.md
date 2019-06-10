@@ -123,6 +123,31 @@ You can start using `terraform` for development.
 
 All other configurations of the infrastructure should happens via terraform scripts.
 
+## What we are Building?
+
+### Visual Overview
+
+This is what we will build in next tutorial steps:
+
+![3D Highly Scalable Web Application Architecture](_documentation_/3d-web-app-architecture.png)
+
+### Highlights
+
+* Two Zones Availability: Stockholm (eu-north-1) & USA (us-east-1)
+* VPC (Virtual Private Cloud) - High level security
+* Instance type is T3 _([more details about instance types](https://aws.amazon.com/ec2/instance-types/))_
+* Master-Slave MySQL with cross-zone replication (Data lossless solution)
+* Load balancing on front-end and back-end (Scaling and Fail tolerance)
+
+#### What we keep in mind during development
+
+* Secrets rotation:
+  * Certificates
+  * SSH keys
+* Docker images for instances running with our code and configuration
+* Backup/Restore solution for DB (S3 bucket with enabled versioning and uto-cleanup lifecycle rules)
+* Version bumping (upgrade of instances with new version of docker image without stopping providing service)
+
 ## Troubleshooting
 
 ### Confirm ROOT user configuration
