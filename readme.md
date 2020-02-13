@@ -206,7 +206,8 @@ terraform workspace new sandbox
 
 ### AWS Best practices
 
-https://github.com/hashicorp/best-practices/blob/master/terraform/providers/aws/README.md
+- https://github.com/hashicorp/best-practices/blob/master/terraform/providers/aws/README.md
+- https://cloudcraft.co/
 
 ### Code Styling
 
